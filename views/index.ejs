@@ -22,7 +22,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -33,13 +33,14 @@
   }
 
   select {
-    width: 100%;
+    width: calc(100% - 24px); /* Adjust for padding */
     padding: 12px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     margin-bottom: 20px;
+    max-width: 100%; /* Ensure full width on smaller screens */
     /* Set a fixed height and allow scrolling */
     max-height: 200px; /* Adjust as needed */
     overflow-y: auto;
@@ -69,6 +70,7 @@
     select,
     input[type="submit"] {
       padding: 10px;
+      font-size: 14px; /* Decrease font size for smaller screens */
     }
   }
 
@@ -78,7 +80,7 @@
     }
     select,
     input[type="submit"] {
-      font-size: 14px;
+      font-size: 12px; /* Further decrease font size for very small screens */
       padding: 8px;
     }
   }
@@ -89,7 +91,6 @@
 <h2>Select Your Favorite Theme:</h2>
 
 <form action="/submit" method="post">
-  <label for="theme">Choose a theme:</label>
   <select id="theme" name="theme">
     <option value="">Select a theme</option>
     <option value="programming">Programming</option>
