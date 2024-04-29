@@ -17,13 +17,17 @@
     margin-bottom: 20px;
   }
 
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
   form {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-    margin: 0 auto;
   }
 
   label {
@@ -33,16 +37,15 @@
   }
 
   select {
-    width: calc(100% - 24px); /* Adjust for padding */
+    width: calc(100% - 24px);
     padding: 12px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     margin-bottom: 20px;
-    max-width: 100%; /* Ensure full width on smaller screens */
-    /* Set a fixed height and allow scrolling */
-    max-height: 200px; /* Adjust as needed */
+    max-width: 100%;
+    max-height: 200px;
     overflow-y: auto;
   }
 
@@ -62,15 +65,11 @@
     background-color: #0056b3;
   }
 
-  /* Responsive Styling */
   @media screen and (max-width: 600px) {
-    form {
-      padding: 15px;
-    }
     select,
     input[type="submit"] {
       padding: 10px;
-      font-size: 14px; /* Decrease font size for smaller screens */
+      font-size: 14px;
     }
   }
 
@@ -80,7 +79,7 @@
     }
     select,
     input[type="submit"] {
-      font-size: 12px; /* Further decrease font size for very small screens */
+      font-size: 12px;
       padding: 8px;
     }
   }
@@ -88,35 +87,37 @@
 </head>
 <body>
 
-<h2>Select Your Favorite Theme:</h2>
+<div class="container">
+  <h2>Select Your Favorite Theme:</h2>
 
-<form action="/submit" method="post">
-  <select id="theme" name="theme">
-    <option value="">Select a theme</option>
-    <option value="programming">Programming</option>
-    <option value="dark">Dark</option>
-    <option value="christmas">Christmas</option>
-    <option value="pun">Pun</option>
-    <option value="spooky">Spooky</option>
-  </select>
-  <input type="submit" value="Submit">
-</form>
+  <form action="/submit" method="post">
+    <select id="theme" name="theme">
+      <option value="">Select a theme</option>
+      <option value="programming">Programming</option>
+      <option value="dark">Dark</option>
+      <option value="christmas">Christmas</option>
+      <option value="pun">Pun</option>
+      <option value="spooky">Spooky</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
 
-<% if(locals.category) { %>
-  <h2>Category: <%= category %></h2>
-<% } %>
-<% if(locals.type) { %>
-  <h2>Type: <%= type %></h2>
-<% } %>
-<% if(locals.joke) { %>
-  <h2>Joke: <%= joke %></h2>
-<% } %>
-<% if(locals.setup) { %>
-  <h2>Setup: <%= setup %></h2>
-<% } %>
-<% if(locals.delivery) { %>
-  <h2>Delivery: <%= delivery %></h2>
-<% } %>
+  <% if(locals.category) { %>
+    <h2>Category: <%= category %></h2>
+  <% } %>
+  <% if(locals.type) { %>
+    <h2>Type: <%= type %></h2>
+  <% } %>
+  <% if(locals.joke) { %>
+    <h2>Joke: <%= joke %></h2>
+  <% } %>
+  <% if(locals.setup) { %>
+    <h2>Setup: <%= setup %></h2>
+  <% } %>
+  <% if(locals.delivery) { %>
+    <h2>Delivery: <%= delivery %></h2>
+  <% } %>
+</div>
 
 </body>
 </html>
